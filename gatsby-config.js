@@ -7,8 +7,8 @@ const shouldAnalyseBundle = process.env.ANALYSE_BUNDLE
  */
 module.exports = {
   siteMetadata: {
-    siteTitle: `Teju Nareddy's Personal Website & Blog`,
-    siteTitleAlt: `Teju Nareddy's`,
+    siteTitle: `Teju Nareddy's Blog`,
+    siteTitleAlt: `Teju Nareddy's Personal Website and Blog`,
     siteHeadline: `Teju Nareddy - Google Cloud SWE and Smart Home Enthusiast`,
     siteUrl: `https://tejunareddy.com`,
     siteDescription: `Teju Nareddy's personal website and blog. Learn more about him, his work, and his hobbies.`,
@@ -52,9 +52,9 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `minimal-blog - @lekoarts/gatsby-theme-minimal-blog`,
-        short_name: `minimal-blog`,
-        description: `Typography driven, feature-rich blogging theme with minimal aesthetics. Includes tags/categories support and extensive features for code blocks such as live preview, line numbers, and code highlighting.`,
+        name: `Teju Nareddy's Blog`,
+        short_name: `Teju's Blog`,
+        description: `Teju Nareddy's personal website and blog. Learn more about him, his work, and his hobbies.`,
         start_url: `/`,
         background_color: `#fff`,
         // This will impact how browsers show your PWA/website
@@ -116,8 +116,8 @@ module.exports = {
     }
   }
 }`,
-            output: `rss.xml`,
-            title: `Minimal Blog - @lekoarts/gatsby-theme-minimal-blog`,
+            output: `/rss.xml`,
+            title: `Teju Nareddy's Blog RSS Feed`,
           },
         ],
       },

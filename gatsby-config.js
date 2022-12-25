@@ -27,6 +27,14 @@ module.exports = {
             slug: `/blog`,
           },
           {
+            title: `Talks`,
+            slug: `/talks`,
+          },
+          {
+            title: `Articles`,
+            slug: `/articles`,
+          },
+          {
             title: `About`,
             slug: `/about`,
           },
@@ -41,6 +49,8 @@ module.exports = {
             url: `https://www.linkedin.com/in/tejasvinareddyteju/`,
           },
         ],
+        showLineNumbers: true,
+        formatString: 'dddd, MMMM Do, YYYY',
       },
     },
     {

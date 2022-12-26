@@ -18,8 +18,22 @@ module.exports = {
   trailingSlash: `never`,
   plugins: [
     {
+      resolve: `gatsby-plugin-google-gtag`,
+      options: {
+        trackingIds: [
+          "G-LXHVPDVGKF", // Google Analytics: GA4
+        ],
+        pluginConfig: {
+          // Puts tracking script in the head instead of the body.
+          // No need to worry about slow loading times.
+          head: true,
+          // Avoids sending pageview hits from custom paths.
+          exclude: ["/preview/**", "/do-not-track/me/too/"],
+        },
+      },
+    },
+    {
       resolve: `@lekoarts/gatsby-theme-minimal-blog`,
-      // See the theme's README for all available options
       options: {
         navigation: [
           {

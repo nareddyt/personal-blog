@@ -6,6 +6,7 @@
 /** @jsx jsx */
 import { jsx, Link } from "theme-ui"
 import useSiteMetadata from "@lekoarts/gatsby-theme-minimal-blog/src/hooks/use-site-metadata"
+import { OutboundLink } from "gatsby-plugin-google-gtag"
 
 const Footer = () => {
   const { author } = useSiteMetadata()
@@ -27,7 +28,7 @@ const Footer = () => {
     >
       <div 
         sx={{
-          textAlign: `left`,
+          textAlign: `center`,
         }}
       >
         &copy; {new Date().getFullYear()} by {author}.
@@ -36,35 +37,35 @@ const Footer = () => {
       </div>
       <div 
         sx={{
-          textAlign: `right`,
+          textAlign: `center`,
         }}
       >
         View this website's
         {` `}
-        <Link
+        <OutboundLink
           aria-label="Link to the website's GitHub repository"
           href="https://github.com/nareddyt/personal-blog"
         >
           source code
-        </Link>
+        </OutboundLink>
         {` `}
         on Github.
         <br/>
-        <Link
+        <OutboundLink
           aria-label="Link to the theme's GitHub repository"
           href="https://github.com/LekoArts/gatsby-themes/tree/main/themes/gatsby-theme-minimal-blog"
         >
           Gatsby theme
-        </Link>
+        </OutboundLink>
         {` `}
         by
         {` `}
-        <Link
+        <OutboundLink
           aria-label="Link to the theme author's website"
           href="https://www.lekoarts.de?utm_source=minimal-blog&utm_medium=Theme"
         >
           @LekoArts
-        </Link>
+        </OutboundLink>
         .
       </div>
     </footer>

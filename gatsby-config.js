@@ -7,7 +7,7 @@ const shouldAnalyseBundle = process.env.ANALYSE_BUNDLE
  */
 module.exports = {
   siteMetadata: {
-    siteTitle: `Teju Nareddy's Blog`,
+    siteTitle: `Teju Nareddy`,
     siteTitleAlt: `Teju Nareddy's Personal Website and Blog`,
     siteHeadline: `Teju Nareddy - Google Cloud SWE and Smart Home Enthusiast`,
     siteUrl: `https://tejunareddy.com`,

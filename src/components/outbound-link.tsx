@@ -4,8 +4,8 @@ import { jsx } from "theme-ui"
 import { OutboundLink as AnalyticsOutboundLink } from "gatsby-plugin-google-gtag"
 
 export interface OutboundLinkProps {
-    href: string
-    ariaLabel: string
+    href?: string
+    ariaLabel?: string
     children: React.ReactNode
 }
 

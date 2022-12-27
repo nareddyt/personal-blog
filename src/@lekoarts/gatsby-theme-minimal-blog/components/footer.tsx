@@ -1,12 +1,13 @@
 /** 
  * Gatsby shadow for
  * https://github.com/LekoArts/gatsby-themes/blob/main/themes/gatsby-theme-minimal-blog/src/components/footer.tsx 
+ * to add extra elements to footer.
  * */
 
 /** @jsx jsx */
 import { jsx, Link } from "theme-ui"
 import useSiteMetadata from "@lekoarts/gatsby-theme-minimal-blog/src/hooks/use-site-metadata"
-import { OutboundLink } from "gatsby-plugin-google-gtag"
+import OutboundLink from "../../../components/outbound-link"
 
 const Footer = () => {
   const { author } = useSiteMetadata()
@@ -31,7 +32,14 @@ const Footer = () => {
           textAlign: `center`,
         }}
       >
-        &copy; {new Date().getFullYear()} by {author}.
+        &copy; {new Date().getFullYear()} by
+        {` `}
+        <OutboundLink
+          ariaLabel="Link to the author's github"
+          href="https://github.com/nareddyt"
+        >
+          {author}.
+        </OutboundLink>
         <br/>
         All rights reserved.
       </div>
@@ -43,7 +51,7 @@ const Footer = () => {
         View this website's
         {` `}
         <OutboundLink
-          aria-label="Link to the website's GitHub repository"
+          ariaLabel="Link to the website's GitHub repository"
           href="https://github.com/nareddyt/personal-blog"
         >
           source code
@@ -52,7 +60,7 @@ const Footer = () => {
         on Github.
         <br/>
         <OutboundLink
-          aria-label="Link to the theme's GitHub repository"
+          ariaLabel="Link to the theme's GitHub repository"
           href="https://github.com/LekoArts/gatsby-themes/tree/main/themes/gatsby-theme-minimal-blog"
         >
           Gatsby theme
@@ -61,7 +69,7 @@ const Footer = () => {
         by
         {` `}
         <OutboundLink
-          aria-label="Link to the theme author's website"
+          ariaLabel="Link to the theme author's website"
           href="https://www.lekoarts.de?utm_source=minimal-blog&utm_medium=Theme"
         >
           @LekoArts

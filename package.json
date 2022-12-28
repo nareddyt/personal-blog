@@ -24,7 +24,9 @@
     "gatsby-plugin-sitemap": "^6.2.0",
     "gatsby-plugin-webpack-bundle-analyser-v2": "^1.1.30",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-schemaorg": "^2.0.0",
+    "schema-dts": "^1.1.0"
   },
   "devDependencies": {
     "cross-env": "^7.0.3"

@@ -12,14 +12,14 @@ import React from 'react'
 import originalComponents from "@lekoarts/gatsby-theme-minimal-blog/src/components/mdx-components"
 
 const rewriteLinks = (props: LinkProps) =>
-    (
-        <OutboundLink
-        href={props.href}
-        ariaLabel={props.title}
-        >
-          {props.children}
-        </OutboundLink>
-    )
+(
+  <OutboundLink
+    href={props.href}
+    ariaLabel={props.title}
+  >
+    {props.children}
+  </OutboundLink>
+)
 
 const MdxComponents = {
   a: rewriteLinks,

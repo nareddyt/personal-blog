@@ -27,7 +27,7 @@ const Footer = () => {
         variant: `dividers.top`,
       }}
     >
-      <div 
+      <div
         sx={{
           textAlign: `center`,
         }}
@@ -40,10 +40,10 @@ const Footer = () => {
         >
           {author}.
         </OutboundLink>
-        <br/>
+        <br />
         All rights reserved.
       </div>
-      <div 
+      <div
         sx={{
           textAlign: `center`,
         }}
@@ -58,7 +58,7 @@ const Footer = () => {
         </OutboundLink>
         {` `}
         on Github.
-        <br/>
+        <br />
         <OutboundLink
           ariaLabel="Link to the theme's GitHub repository"
           href="https://github.com/LekoArts/gatsby-themes/tree/main/themes/gatsby-theme-minimal-blog"

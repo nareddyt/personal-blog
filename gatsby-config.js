@@ -65,6 +65,7 @@ module.exports = {
         ],
         showLineNumbers: true,
         formatString: 'dddd, MMMM Do, YYYY',
+        postsPrefix: "/blog/"
       },
     },
     {

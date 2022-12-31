@@ -18,7 +18,8 @@ const OutboundLink = (props: OutboundLinkProps) => {
         textDecoration: 'none',
         "&:hover": {
           textDecoration: 'underline',
-        }
+        },
+        transition: "all 0.3s ease-in-out",
       }}
     >
       {props.children}

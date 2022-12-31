@@ -6,10 +6,13 @@ import * as React from "react"
 import type { MBPostProps } from "@lekoarts/gatsby-theme-minimal-blog/src/components/post"
 import { JsonLd } from "react-schemaorg";
 import { ProfilePage, Person, BlogPosting } from "schema-dts";
+import useSiteMetadata from "@lekoarts/gatsby-theme-minimal-blog/src/hooks/use-site-metadata"
 
 export const PostStructedData = (props: MBPostProps) => {
+  const site = useSiteMetadata();
+
   const imageSource = props.post.banner?.childImageSharp?.resize?.src;
-  const imageSchema = imageSource ? [imageSource] : [];
+  const imageSchema = imageSource ? [`${site.siteUrl}${imageSource}`] : [];
 
   return (
     <JsonLd<BlogPosting>
@@ -23,7 +26,7 @@ export const PostStructedData = (props: MBPostProps) => {
           {
             "@type": "Person",
             "name": "Teju Nareddy",
-            "sameAs": "https://tejunareddy.com/about"
+            "sameAs": `${site.siteUrl}/about`
           },
         ]
       }}
@@ -32,6 +35,8 @@ export const PostStructedData = (props: MBPostProps) => {
 }
 
 export const AboutTejuStructuredData = () => {
+  const site = useSiteMetadata();
+
   return (
     <JsonLd<Person>
       item={{
@@ -43,21 +48,23 @@ export const AboutTejuStructuredData = () => {
         "familyName": "Nareddy",
         "gender": "Male",
         "givenName": "Teju",
-        "image": "https://tejunareddy.com/profile.jpg",
+        "image": `${site.siteUrl}/profile.jpg`,
         "jobTitle": "Software Engineer",
-        "url": "http://www.tejunareddy.com/about",
+        "url": `${site.siteUrl}/about`,
       }}
     />
   )
 }
 
 export const AboutWebsiteStructuredData = () => {
+  const site = useSiteMetadata();
+
   return (
     <JsonLd<ProfilePage>
       item={{
         "@context": "https://schema.org",
         "@type": "ProfilePage",
-        "url": "http://www.tejunareddy.com/about",
+        "url": `${site.siteUrl}/about`,
         "license": "https://github.com/nareddyt/personal-blog/blob/main/LICENSE",
         "keywords": [
           "personal website",
@@ -65,14 +72,14 @@ export const AboutWebsiteStructuredData = () => {
           "teju nareddy",
         ],
         "significantLinks": [
-          "http://www.tejunareddy.com",
-          "http://www.tejunareddy.com/blog",
-          "http://www.tejunareddy.com/about",
+          `${site.siteUrl}`,
+          `${site.siteUrl}/blog`,
+          `${site.siteUrl}/about`,
         ],
         "mainEntity": {
           "@type": "Person",
           "name": "Teju Nareddy",
-          "sameAs": "https://tejunareddy.com/about",
+          "sameAs": `${site.siteUrl}/about`,
         }
       }}
     />

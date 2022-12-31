@@ -48,33 +48,19 @@ const Footer = () => {
           textAlign: `center`,
         }}
       >
-        View this website's
-        {` `}
         <OutboundLink
           ariaLabel="Link to the website's GitHub repository"
           href="https://github.com/nareddyt/personal-blog"
         >
-          source code
+          This website is open source!
         </OutboundLink>
-        {` `}
-        on Github.
         <br />
         <OutboundLink
-          ariaLabel="Link to the theme's GitHub repository"
-          href="https://github.com/LekoArts/gatsby-themes/tree/main/themes/gatsby-theme-minimal-blog"
+          ariaLabel="Link to the website's attributions"
+          href="/attributions"
         >
-          Gatsby theme
+          Creative commons attributions.
         </OutboundLink>
-        {` `}
-        by
-        {` `}
-        <OutboundLink
-          ariaLabel="Link to the theme author's website"
-          href="https://www.lekoarts.de?utm_source=minimal-blog&utm_medium=Theme"
-        >
-          @LekoArts
-        </OutboundLink>
-        .
       </div>
     </footer>
   )

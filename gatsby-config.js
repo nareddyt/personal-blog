@@ -1,6 +1,6 @@
-require(`dotenv`).config()
+require(`dotenv`).config();
 
-const shouldAnalyseBundle = process.env.ANALYSE_BUNDLE
+const shouldAnalyseBundle = process.env.ANALYSE_BUNDLE;
 
 /**
  * @type {import('gatsby').GatsbyConfig}
@@ -64,8 +64,8 @@ module.exports = {
           },
         ],
         showLineNumbers: true,
-        formatString: 'dddd, MMMM Do, YYYY',
-        postsPrefix: "/blog/"
+        formatString: "dddd, MMMM Do, YYYY",
+        postsPrefix: "/blog/",
       },
     },
     {
@@ -119,8 +119,8 @@ module.exports = {
           {
             serialize: ({ query: { site, allPost } }) =>
               allPost.nodes.map((post) => {
-                const url = site.siteMetadata.siteUrl + post.slug
-                const content = `<p>${post.excerpt}</p><div style="margin-top: 50px; font-style: italic;"><strong><a href="${url}">Keep reading</a>.</strong></div><br /> <br />`
+                const url = site.siteMetadata.siteUrl + post.slug;
+                const content = `<p>${post.excerpt}</p><div style="margin-top: 50px; font-style: italic;"><strong><a href="${url}">Keep reading</a>.</strong></div><br /> <br />`;
 
                 return {
                   title: post.title,
@@ -129,7 +129,7 @@ module.exports = {
                   url,
                   guid: url,
                   custom_elements: [{ "content:encoded": content }],
-                }
+                };
               }),
             query: `{
   allPost(sort: {date: DESC}) {
@@ -156,4 +156,4 @@ module.exports = {
       },
     },
   ].filter(Boolean),
-}
+};

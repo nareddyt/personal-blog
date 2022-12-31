@@ -1,17 +1,17 @@
-/** 
+/**
  * Gatsby shadow for
- * https://github.com/LekoArts/gatsby-themes/blob/main/themes/gatsby-theme-minimal-blog/src/components/header-external-links.tsx 
+ * https://github.com/LekoArts/gatsby-themes/blob/main/themes/gatsby-theme-minimal-blog/src/components/header-external-links.tsx
  * to add Google Analytics.
  * */
 
 /** @jsx jsx */
-import * as React from "react"
-import { jsx } from "theme-ui"
-import useMinimalBlogConfig from "@lekoarts/gatsby-theme-minimal-blog/src/hooks/use-minimal-blog-config"
-import OutboundLink from "../../../components/outbound-link"
+import * as React from "react";
+import { jsx } from "theme-ui";
+import useMinimalBlogConfig from "@lekoarts/gatsby-theme-minimal-blog/src/hooks/use-minimal-blog-config";
+import OutboundLink from "../../../components/outbound-link";
 
 const HeaderExternalLinks = () => {
-  const { externalLinks } = useMinimalBlogConfig()
+  const { externalLinks } = useMinimalBlogConfig();
 
   return (
     <React.Fragment>
@@ -29,7 +29,7 @@ const HeaderExternalLinks = () => {
         </div>
       )}
     </React.Fragment>
-  )
-}
+  );
+};
 
-export default HeaderExternalLinks
+export default HeaderExternalLinks;

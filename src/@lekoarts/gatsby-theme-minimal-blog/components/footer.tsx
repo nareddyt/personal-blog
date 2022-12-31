@@ -1,16 +1,16 @@
-/** 
+/**
  * Gatsby shadow for
- * https://github.com/LekoArts/gatsby-themes/blob/main/themes/gatsby-theme-minimal-blog/src/components/footer.tsx 
+ * https://github.com/LekoArts/gatsby-themes/blob/main/themes/gatsby-theme-minimal-blog/src/components/footer.tsx
  * to add extra elements to footer.
  * */
 
 /** @jsx jsx */
-import { jsx } from "theme-ui"
-import useSiteMetadata from "@lekoarts/gatsby-theme-minimal-blog/src/hooks/use-site-metadata"
-import OutboundLink from "../../../components/outbound-link"
+import { jsx } from "theme-ui";
+import useSiteMetadata from "@lekoarts/gatsby-theme-minimal-blog/src/hooks/use-site-metadata";
+import OutboundLink from "../../../components/outbound-link";
 
 const Footer = () => {
-  const { author } = useSiteMetadata()
+  const { author } = useSiteMetadata();
 
   return (
     <footer
@@ -63,7 +63,7 @@ const Footer = () => {
         </OutboundLink>
       </div>
     </footer>
-  )
-}
+  );
+};
 
-export default Footer
+export default Footer;

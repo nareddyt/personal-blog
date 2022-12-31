@@ -8,16 +8,16 @@ import { JsonLd } from "react-schemaorg";
 import { ProfilePage, Person, BlogPosting } from "schema-dts";
 
 export const PostStructedData = (props: MBPostProps) => {
+  const imageSource = props.post.banner?.childImageSharp?.resize?.src;
+  const imageSchema = imageSource ? [imageSource] : [];
+
   return (
     <JsonLd<BlogPosting>
       item={{
         "@context": "https://schema.org",
         "@type": "BlogPosting",
         "headline": props.post.title,
-        "image": [
-          // TODO(nareddyt)
-          // post.banner?.childImageSharp?.resize?.src,
-        ],
+        "image": imageSchema,
         "datePublished": props.post.date,
         "author": [
           {

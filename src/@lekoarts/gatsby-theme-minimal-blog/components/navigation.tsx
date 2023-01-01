@@ -10,7 +10,7 @@ import { jsx } from "theme-ui";
 import { Link } from "gatsby";
 import useMinimalBlogConfig from "@lekoarts/gatsby-theme-minimal-blog/src/hooks/use-minimal-blog-config";
 import replaceSlashes from "@lekoarts/gatsby-theme-minimal-blog/src/utils/replaceSlashes";
-import { useMediaQuery } from "react-responsive";
+import { isTouchScreen } from "../../../utils/responsive";
 
 type NavigationProps = {
   nav: {
@@ -22,11 +22,6 @@ type NavigationProps = {
 const Navigation = ({ nav }: NavigationProps) => {
   const { basePath } = useMinimalBlogConfig();
 
-  // https://web.dev/accessible-tap-targets/
-  const isTouchScreen = useMediaQuery({
-    query: "(pointer: coarse)",
-  });
-
   return (
     <React.Fragment>
       {nav && nav.length > 0 && (
@@ -37,7 +32,7 @@ const Navigation = ({ nav }: NavigationProps) => {
             },
             fontSize: [1, `18px`],
             ".active": { color: `heading` },
-            paddingTop: isTouchScreen ? "8px" : undefined,
+            paddingTop: isTouchScreen() ? "8px" : undefined,
           }}
         >
           {nav.map((item) => (
@@ -46,7 +41,7 @@ const Navigation = ({ nav }: NavigationProps) => {
               key={item.slug}
               sx={(t) => ({
                 ...t.styles?.a,
-                paddingTop: isTouchScreen ? "8px" : undefined,
+                paddingTop: isTouchScreen() ? "8px" : undefined,
               })}
               to={replaceSlashes(`/${basePath}/${item.slug}`)}
             >

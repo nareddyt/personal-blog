@@ -11,15 +11,10 @@ import * as React from "react";
 import { jsx } from "theme-ui";
 import useMinimalBlogConfig from "@lekoarts/gatsby-theme-minimal-blog/src/hooks/use-minimal-blog-config";
 import OutboundLink from "../../../components/outbound-link";
-import { useMediaQuery } from "react-responsive";
+import { isTouchScreen } from "../../../utils/responsive";
 
 const HeaderExternalLinks = () => {
   const { externalLinks } = useMinimalBlogConfig();
-
-  // https://web.dev/accessible-tap-targets/
-  const isTouchScreen = useMediaQuery({
-    query: "(pointer: coarse)",
-  });
 
   return (
     <React.Fragment>
@@ -30,7 +25,7 @@ const HeaderExternalLinks = () => {
               ml: 3,
             },
             fontSize: [1, `18px`],
-            paddingTop: isTouchScreen ? "8px" : undefined,
+            paddingTop: isTouchScreen() ? "8px" : undefined,
           }}
         >
           {externalLinks.map((link) => (

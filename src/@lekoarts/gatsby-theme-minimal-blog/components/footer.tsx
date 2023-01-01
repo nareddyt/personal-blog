@@ -5,20 +5,15 @@
  * */
 
 /** @jsx jsx */
+import * as React from "react";
 import { jsx } from "theme-ui";
 import useSiteMetadata from "@lekoarts/gatsby-theme-minimal-blog/src/hooks/use-site-metadata";
 import OutboundLink from "../../../components/outbound-link";
 import { Link } from "gatsby";
-import { useMediaQuery } from "react-responsive";
+import { isTouchScreen } from "../../../utils/responsive";
 
 const Footer = () => {
   const { author } = useSiteMetadata();
-
-  // https://web.dev/accessible-tap-targets/
-  const isTouchScreen = useMediaQuery({
-    query: "(pointer: coarse)",
-  });
-
   return (
     <footer
       sx={{
@@ -37,8 +32,8 @@ const Footer = () => {
       <div
         sx={{
           textAlign: `center`,
-          paddingTop: isTouchScreen ? "8px" : undefined,
-          lineHeight: isTouchScreen ? 2 : undefined,
+          paddingTop: isTouchScreen() ? "8px" : undefined,
+          lineHeight: isTouchScreen() ? 2 : undefined,
         }}
       >
         &copy; {new Date().getFullYear()} by
@@ -55,8 +50,8 @@ const Footer = () => {
       <div
         sx={{
           textAlign: `center`,
-          paddingTop: isTouchScreen ? "8px" : undefined,
-          lineHeight: isTouchScreen ? 2 : undefined,
+          paddingTop: isTouchScreen() ? "8px" : undefined,
+          lineHeight: isTouchScreen() ? 2 : undefined,
         }}
       >
         <OutboundLink
@@ -72,7 +67,7 @@ const Footer = () => {
           to="/attributions"
           sx={(t) => ({
             ...t.styles?.a,
-            paddingTop: isTouchScreen ? "8px" : undefined,
+            paddingTop: isTouchScreen() ? "8px" : undefined,
           })}
         >
           attributions.

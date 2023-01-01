@@ -2,7 +2,7 @@
 import * as React from "react";
 import { jsx } from "theme-ui";
 import { OutboundLink as AnalyticsOutboundLink } from "gatsby-plugin-google-gtag";
-import { useMediaQuery } from 'react-responsive'
+import { isTouchScreen } from "../utils/responsive";
 
 export interface OutboundLinkProps {
   href?: string;
@@ -11,11 +11,6 @@ export interface OutboundLinkProps {
 }
 
 const OutboundLink = (props: OutboundLinkProps) => {
-  // https://web.dev/accessible-tap-targets/
-  const isTouchScreen = useMediaQuery({
-    query: '(pointer: coarse)'
-  })
-
   return (
     <AnalyticsOutboundLink
       href={props.href}
@@ -26,7 +21,7 @@ const OutboundLink = (props: OutboundLinkProps) => {
           textDecoration: "underline",
         },
         transition: "all 0.3s ease-in-out",
-        paddingTop: isTouchScreen? '8px' : undefined,
+        paddingTop: isTouchScreen() ? "8px" : undefined,
       }}
     >
       {props.children}

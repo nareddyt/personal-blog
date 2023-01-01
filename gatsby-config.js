@@ -1,4 +1,6 @@
 require(`dotenv`).config();
+const remarkGfm = require(`remark-gfm`);
+const rehypeMetaAsAttributes = require(`@lekoarts/rehype-meta-as-attributes`);
 
 const shouldAnalyseBundle = process.env.ANALYSE_BUNDLE;
 
@@ -66,6 +68,42 @@ module.exports = {
         showLineNumbers: true,
         formatString: "dddd, MMMM Do, YYYY",
         postsPrefix: "/blog/",
+        mdx: false, // Manually enabled below.
+      },
+    },
+    {
+      resolve: `gatsby-plugin-mdx`,
+      options: {
+        mdxOptions: {
+          remarkPlugins: [remarkGfm],
+          rehypePlugins: [rehypeMetaAsAttributes],
+        },
+        extensions: [`.mdx`, `.md`],
+        gatsbyRemarkPlugins: [
+          {
+            resolve: `gatsby-remark-table-of-contents`,
+            options: {
+              exclude: "Table of Contents",
+              tight: false,
+              ordered: false,
+              fromHeading: 2,
+              toHeading: 4,
+              className: "table-of-contents"
+            },
+          },
+          `gatsby-remark-autolink-headers`,
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 1200,
+              quality: 90,
+              linkImagesToOriginal: true,
+              withWebp: true,
+              withAvif: true,
+              backgroundColor: `transparent`,
+            },
+          },
+        ],
       },
     },
     {

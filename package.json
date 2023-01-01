@@ -25,6 +25,7 @@
     "gatsby-plugin-webpack-bundle-analyser-v2": "^1.1.30",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-responsive": "^9.0.2",
     "react-schemaorg": "^2.0.0",
     "schema-dts": "^1.1.0"
   },

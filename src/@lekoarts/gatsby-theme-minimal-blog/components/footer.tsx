@@ -8,6 +8,7 @@
 import { jsx } from "theme-ui";
 import useSiteMetadata from "@lekoarts/gatsby-theme-minimal-blog/src/hooks/use-site-metadata";
 import OutboundLink from "../../../components/outbound-link";
+import { Link } from "gatsby";
 
 const Footer = () => {
   const { author } = useSiteMetadata();
@@ -55,12 +56,7 @@ const Footer = () => {
           This website is open source!
         </OutboundLink>
         <br />
-        <OutboundLink
-          ariaLabel="Link to the website's attributions"
-          href="/attributions"
-        >
-          Creative commons attributions.
-        </OutboundLink>
+        <Link to="/attributions">Creative commons attributions.</Link>
       </div>
     </footer>
   );

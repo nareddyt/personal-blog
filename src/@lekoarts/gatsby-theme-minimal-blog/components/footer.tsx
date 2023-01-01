@@ -1,7 +1,7 @@
 /**
  * Gatsby shadow for
  * https://github.com/LekoArts/gatsby-themes/blob/main/themes/gatsby-theme-minimal-blog/src/components/footer.tsx
- * to add extra elements to footer.
+ * to add extra elements to footer and fix padding sizes.
  * */
 
 /** @jsx jsx */
@@ -9,9 +9,15 @@ import { jsx } from "theme-ui";
 import useSiteMetadata from "@lekoarts/gatsby-theme-minimal-blog/src/hooks/use-site-metadata";
 import OutboundLink from "../../../components/outbound-link";
 import { Link } from "gatsby";
+import { useMediaQuery } from "react-responsive";
 
 const Footer = () => {
   const { author } = useSiteMetadata();
+
+  // https://web.dev/accessible-tap-targets/
+  const isTouchScreen = useMediaQuery({
+    query: "(pointer: coarse)",
+  });
 
   return (
     <footer
@@ -31,6 +37,8 @@ const Footer = () => {
       <div
         sx={{
           textAlign: `center`,
+          paddingTop: isTouchScreen ? "8px" : undefined,
+          lineHeight: isTouchScreen ? 2 : undefined,
         }}
       >
         &copy; {new Date().getFullYear()} by
@@ -41,12 +49,14 @@ const Footer = () => {
         >
           {author}.
         </OutboundLink>
-        <br />
+        {` `}
         All rights reserved.
       </div>
       <div
         sx={{
           textAlign: `center`,
+          paddingTop: isTouchScreen ? "8px" : undefined,
+          lineHeight: isTouchScreen ? 2 : undefined,
         }}
       >
         <OutboundLink
@@ -55,8 +65,18 @@ const Footer = () => {
         >
           This website is open source!
         </OutboundLink>
-        <br />
-        <Link to="/attributions">Creative commons attributions.</Link>
+        {` `}
+        Creative commons
+        {` `}
+        <Link
+          to="/attributions"
+          sx={(t) => ({
+            ...t.styles?.a,
+            paddingTop: isTouchScreen ? "8px" : undefined,
+          })}
+        >
+          attributions.
+        </Link>
       </div>
     </footer>
   );
